@@ -1,4 +1,6 @@
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken'); //JSON web tokens : encoded token who can be used for authorization
+
+//Users authentication by a mere comparison of tokens
 
 module.exports = (req, res, next) => {
   try {
