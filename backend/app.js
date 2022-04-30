@@ -3,12 +3,14 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
 
+require('dotenv').config(); 
+
 const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 
 //connection to the dataBase (mongodb) via mongoose.
 
-mongoose.connect('mongodb+srv://thibaultco:wZqkYstE5vyy7HTX@cluster0.2boqd.mongodb.net/Cluster0?retryWrites=true&w=majority',
+mongoose.connect(process.env.DB_URI,
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
